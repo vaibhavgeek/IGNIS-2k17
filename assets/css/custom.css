@@ -1,0 +1,121 @@
+*{
+	font-family: 'Exo 2', sans-serif;
+}
+
+.eventbox{
+	min-height: 320px;
+	min-width: 45%;
+	height: auto;
+	border:10px solid #E2E2E2;
+	margin-top: 20px;
+	margin-left: 25px;
+	margin-right: 25px;
+	box-shadow: 10px 10px 10px #615E5E;
+}
+
+.eventbox a img{
+	height: 320px;
+	width: 100%;
+}
+
+.project-title{
+	font-size: 50px;
+	font-weight: bold;
+	vertical-align: center;
+}
+.eventbox{
+	padding: 0px;
+}
+
+.aboutlogo{
+	width: 150px;
+	height: 150px;
+}
+.gate{
+	width:500px;
+	box-shadow: 10px 10px 10px #615E5E;
+	margin: 20px ;
+	border-radius: 5px;
+	margin-left: 150px;
+}
+.aboutimg{
+	box-shadow: 10px 10px 10px #615E5E;
+	border: 5px solid #E2E2E2;
+	margin-top: 20px;
+	border-radius: 3px;
+}
+.sports-details{
+	position: relative;
+	top: 0px;
+	font-size: 14px;
+	max-width: 80%;
+	margin-left: 10%;
+}
+.sports-details .description{
+	margin-bottom: 5px;
+	color: white;
+}
+.brand-data{
+	margin-left: 0px;
+	width: 20%;
+	height: 20px;
+	padding-top: 0px;
+}
+.social-icons{
+	color: white
+}
+
+@media screen and (max-width: 1200px){
+	.gate{
+		width:80%;
+		margin-left: 10%;
+	}
+	.eventbox{
+		min-height: 260px;
+		min-width: 38%;
+	}
+	.eventbox a img{
+		height: 280px;
+	}
+}
+
+@media screen and (max-width: 992px){
+	.gate{
+		width:80%;
+	}
+}
+
+@media screen and (max-width: 768px){
+	.brand-data{
+		width: 11%;
+	}
+	.gate{
+		width:80%;
+	}
+}
+@media screen and (max-width: 600px){
+	.brand-data{
+		width: 10%;
+	}
+}
+@media screen and (max-width: 450px){
+	.brand-data{
+		width: 14%
+	}
+}
+@media screen and (max-width:360px){
+
+	.slider-title{
+		font-size: 1.275em;
+		width: 100%;
+	}
+	.brand-data{
+		width:17%;
+		margin-top: 1px;
+	}
+}
+@media screen and (max-width: 321px){
+	.brand-data{
+		width: 20%;
+	}
+}
