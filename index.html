@@ -36,7 +36,15 @@
 
 <!--add from here-->
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script type="text/javascript" src="assets/js/smoothscroll.js"></script> 
+<script type="text/javascript" src="assets/js/smoothscroll.js"></script>
+<style>
+  #map {
+        width: 100%;
+        height: 498px;
+        background-color:grey;
+      }
+
+</style> 
 
 </head>
 <body>
@@ -581,8 +589,8 @@
   <section id="contact" class="contact">
     <div class="cointainer" style="margin:12px;">
       <div class="col-md-7">
-    <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script><div style='overflow:hidden;height:498px;width:100%;'><div id='gmap_canvas' style='height:498px;width:100%;'></div><div><small><a href="http://embedgooglemaps.com">embed google maps</a></small></div><div><small><a href="http://add-link-exchange.com/">add your link for free</a></small></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div>
-  </div>
+            <div id="map"></div>
+      </div>
 
         <div class="col-md-5">
         <h1 class="centered">Contact Us</h1>  
@@ -764,10 +772,6 @@
   <script>window.jQuery || document.write('<script src="assets/js/jquery-1.11.2.min.js"><\/script>')</script>
   <!-- Include WOW Min Js -->
   <script src="assets/js/wow.min.js"></script>
-  <!-- Google Maps Script -->
-  <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
-  <!-- Gmap3.js For Static Maps -->
-  <script src="assets/js/gmap3.js"></script>
   <!-- Include Waypoint Js -->
   <script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
   <!-- Include Ajax MailChimp Js -->
@@ -775,13 +779,28 @@
     <!-- Include Custom Js </-->
   <script src="assets/js/custom.min.js"></script>
 
-  <script type='text/javascript'>function init_map(){var myOptions = {zoom:18,center:new google.maps.LatLng(21.1673496,72.7851018),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(21.1673496,72.7851018)});infowindow = new google.maps.InfoWindow({content:'<strong>Title</strong><br>svnit,Surat, gujarat<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);
-  </script>
+  <script>
+      function initMap() {
+        var uluru = {lat: 21.1673496, lng: 72.7851018};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 18,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPdfP520Lb8vOSop2_svxSoNFjxu-lw6o&callback=initMap">
+    </script>
+
 
 
   <script>
 
-    $(".bxslider").bxSlider({auto:!0,preloadImages:"all",mode:"horizontal",captions:!1,controls:!0,pause:4000,speed:1200,onSliderLoad:function(){$(".bxslider>li .slide-inner").eq(1).addClass("active-slide"),$(".slide-inner.active-slide .slider-title").addClass("wow animated bounceInDown"),$(".slide-inner.active-slide .slide-description").addClass("wow animated bounceInRight"),$(".slide-inner.active-slide .btn").addClass("wow animated zoomInUp")},onSlideAfter:function(e,i,n){console.log(n),$(".active-slide").removeClass("active-slide"),$(".bxslider>li .slide-inner").eq(n+1).addClass("active-slide"),$(".slide-inner.active-slide").addClass("wow animated bounceInRight")},onSlideBefore:function(){$(".slide-inner.active-slide").removeClass("wow animated bounceInRight"),$(".one.slide-inner.active-slide").removeAttr("style")}}),$(document).ready(function(){function e(){return"ontouchstart"in document.documentElement}function i(){if("undefined"!=typeof google){var i={center:[-37.817331,144.955652],zoom:15,mapTypeControl:!0,mapTypeControlOptions:{style:google.maps.MapTypeControlStyle.DROPDOWN_MENU},navigationControl:!0,scrollwheel:!1,streetViewControl:!0};e()&&(i.draggable=!1),$("#googleMaps").gmap3({map:{options:i},marker:{latLng:[23.709921,90.407143],options:{icon:"images/mapicon.png"}}})}}$("#masthead #main-menu").onePageNav(),i()}),$("#contactform").on("submit",function(e){e.preventDefault(),$this=$(this),$.ajax({type:"POST",url:$this.attr("action"),data:$this.serialize(),success:function(){alert("Message Sent Successfully")}})});
+    $(".bxslider").bxSlider({auto:!0,preloadImages:"all",mode:"horizontal",captions:!1,controls:!0,pause:4000,speed:1200,onSliderLoad:function(){$(".bxslider>li .slide-inner").eq(1).addClass("active-slide"),$(".slide-inner.active-slide .slider-title").addClass("wow animated bounceInDown"),$(".slide-inner.active-slide .slide-description").addClass("wow animated bounceInRight"),$(".slide-inner.active-slide .btn").addClass("wow animated zoomInUp")},onSlideAfter:function(e,i,n){console.log(n),$(".active-slide").removeClass("active-slide"),$(".bxslider>li .slide-inner").eq(n+1).addClass("active-slide"),$(".slide-inner.active-slide").addClass("wow animated bounceInRight")},onSlideBefore:function(){$(".slide-inner.active-slide").removeClass("wow animated bounceInRight"),$(".one.slide-inner.active-slide").removeAttr("style")}});
 
   </script>
 </body>
